@@ -1,0 +1,13 @@
+Trapped Sheep
+
+The sheep is stuck in a maze, very scared of its surroundings. The sheep is so scared that if it even touches the wall, it will run back to its corner.
+
+The goal is to get out of the maze without touching the walls. Be very careful, as the sheep is very sensitive.
+
+Controls:
+	Left Arrow - move the sheep to the left
+	Right Arrow - move the sheep to the right
+	Up Arrow - move the sheep up
+	Down Arrow - move the sheep down
+
+Enjoy!

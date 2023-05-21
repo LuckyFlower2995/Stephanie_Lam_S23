@@ -1,0 +1,6 @@
+[submodule "Project/S23_Game/glfw"]
+	path = Project/S23_Game/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "glfw"]
+	path = glfw
+	url = https://github.com/glfw/glfw.git

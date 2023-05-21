@@ -1,0 +1,11 @@
+x64/
+.vs/
+Debug/
+Release/
+CheckMate/Debug
+CheckMate/Release
+CheckMate/x64
+S23_Game/Debug
+S23_Game/Release
+S23_Game/x64
+glfw_build/

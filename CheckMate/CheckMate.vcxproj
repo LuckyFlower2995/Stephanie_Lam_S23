@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sourcecode\CheckMateApp.cpp" />
+    <ClCompile Include="sourcecode\CheckMateEvents.cpp" />
+    <ClCompile Include="sourcecode\GameWindow.cpp" />
+    <ClCompile Include="sourcecode\GLFWCode\GLFWimplementation.cpp" />
+    <ClCompile Include="sourcecode\Image.cpp" />
+    <ClCompile Include="sourcecode\OpenGLCode\OpenGLImage.cpp" />
+    <ClCompile Include="sourcecode\OpenGLCode\OpenGLRenderer.cpp" />
+    <ClCompile Include="sourcecode\OpenGLCode\OpenGLShader.cpp" />
+    <ClCompile Include="sourcecode\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="sourcecode\Renderer.cpp" />
+    <ClCompile Include="sourcecode\Shader.cpp" />
+    <ClCompile Include="sourcecode\Unit.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\CheckMate.h" />
+    <ClInclude Include="sourcecode\CheckMateApp.h" />
+    <ClInclude Include="sourcecode\CheckMateEvents.h" />
+    <ClInclude Include="sourcecode\CheckMateKeys.h" />
+    <ClInclude Include="sourcecode\CheckMateUtil.h" />
+    <ClInclude Include="sourcecode\GameWindow.h" />
+    <ClInclude Include="sourcecode\GLFWCode\GLFWimplementation.h" />
+    <ClInclude Include="sourcecode\Image.h" />
+    <ClInclude Include="sourcecode\ImplImage.h" />
+    <ClInclude Include="sourcecode\ImplRenderer.h" />
+    <ClInclude Include="sourcecode\ImplShader.h" />
+    <ClInclude Include="sourcecode\OpenGLCode\OpenGLImage.h" />
+    <ClInclude Include="sourcecode\OpenGLCode\OpenGLRenderer.h" />
+    <ClInclude Include="sourcecode\OpenGLCode\OpenGLShader.h" />
+    <ClInclude Include="sourcecode\pch.h" />
+    <ClInclude Include="sourcecode\Renderer.h" />
+    <ClInclude Include="sourcecode\RendererTypes.h" />
+    <ClInclude Include="sourcecode\Shader.h" />
+    <ClInclude Include="sourcecode\Unit.h" />
+    <ClInclude Include="sourcecode\WindowImplementation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\glad\glad.vcxproj">
+      <Project>{8ae51d7a-34ab-447a-96f1-23967924bb8b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\glfw_build\src\glfw.vcxproj">
+      <Project>{4b65ba2f-c223-37e1-9df7-ade8c93b123c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\stbi\stbi.vcxproj">
+      <Project>{4e00b414-dced-43e6-8954-9f933df0a8c0}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{d6321225-e86d-46dd-abbf-fbf763e92678}</ProjectGuid>
+    <RootNamespace>CheckMate</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);CHECKMATE_LIB;CHECKMATE_WINDOWS;CHECKMATE_GLFW;CHECKMATE_OPENGL;CHECKMATE_DEBUG=2</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)stbi;$(SolutionDir)CheckMate\sourcecode;$(SolutionDir)glfw\include;$(SolutionDir)glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);CHECKMATE_LIB;CHECKMATE_WINDOWS;CHECKMATE_GLFW;CHECKMATE_OPENGL</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)stbi;$(SolutionDir)CheckMate\sourcecode;$(SolutionDir)glfw\include;$(SolutionDir)glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
